@@ -55,7 +55,7 @@ async def change_user(user_id: int, user: User):
 @app.delete("/take_off/{user_id}", response_model=User)
 async def take_off_user(user_id: int):
     for item in users:
-        if item.id == user_id:
+        if item.user_id == user_id:
             users.remove(item)
             return item
     # вернет null если обьекта нет
